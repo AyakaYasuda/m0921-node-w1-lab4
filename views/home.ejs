@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+<h1>Welcome to MEMBERS</h1>
+<form action="/" method="POST" class="members-form">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Enter your name" />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" placeholder="Enter your email address" />
+  </div>
+  <button type="submit">CREATE</button>
+</form>
+<ul class="members-list">
+  <% members.forEach(member => { %>
+  <li class="members-list-item">
+    <p><%= member.id %></p>
+    <a href="/<%= member.id %>"><h3><%= member.name %></h3></a>
+    <p><%= member.email %></p>
+  </li>
+  <% }) %>
+</ul>
+<%- include("partials/footer.ejs") %>

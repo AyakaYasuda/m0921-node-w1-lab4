@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+<h1>Members page</h1>
+<form
+  action="/api/members/update/<%= member.id %>"
+  method="POST"
+  class="members-form"
+>
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="<%= member.name %>" />
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email" value="<%= member.email %>" />
+  </div>
+  <button type="submit">UPDATE</button>
+</form>
+<form action="/api/members/delete/<%= member.id %>" method="POST">
+  <input type="hidden" />
+  <button type="submit">DELETE</button>
+</form>
+<a href="/">Go back home</a>
+<%- include("partials/footer.ejs") %>
